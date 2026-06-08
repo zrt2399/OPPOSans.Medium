@@ -2,7 +2,7 @@
 [![NuGet - Avalonia](https://img.shields.io/nuget/v/OPPOSans.Medium.Avalonia?label=OPPOSans.Medium.Avalonia)](https://www.nuget.org/packages/OPPOSans.Medium.Avalonia)
 [![NuGet - WPF](https://img.shields.io/nuget/v/OPPOSans.Medium.Wpf?label=OPPOSans.Medium.Wpf)](https://www.nuget.org/packages/OPPOSans.Medium.Wpf)
 
-# OPPOSans Font for .NET (Avalonia & WPF)
+# OPPOSans Medium Font for .NET (Avalonia & WPF)
 The OPPOSans Font released in 2019, packaged for easy use in Avalonia and WPF applications.
 
 ## 🚀 Avalonia Usage
