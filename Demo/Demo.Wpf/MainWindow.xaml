@@ -1,0 +1,117 @@
+﻿<Window x:Class="Demo.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Demo.Wpf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="Demo.Wpf"
+        Width="800"
+        Height="480"
+        Background="{DynamicResource ApplicationBackgroundBrush}"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <StackPanel Grid.Row="0">
+            <TextBlock Margin="0,0,0,6"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                       Text="Typography Playground" />
+            <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                       Opacity="0.65"
+                       Text="Adjust font size, font style, and font weight to preview the rendering effect of OPPOSans in real time." />
+        </StackPanel>
+
+        <!--  Controls Card  -->
+        <Border Grid.Row="2"
+                Padding="18"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="16" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Margin="0,0,0,8"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               Opacity="0.7"
+                               Text="FontSize" />
+                    <ComboBox Name="FontSizeComboBox"
+                              HorizontalAlignment="Stretch"
+                              ToolTip="Select the font size for the preview text." />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Margin="0,0,0,8"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               Opacity="0.7"
+                               Text="FontStyle" />
+                    <ComboBox Name="FontStyleComboBox"
+                              HorizontalAlignment="Stretch"
+                              ToolTip="Select the font style (e.g., Normal, Italic) for the preview text." />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4">
+                    <TextBlock Margin="0,0,0,8"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               Opacity="0.7"
+                               Text="FontWeight" />
+                    <ComboBox Name="FontWeightComboBox"
+                              HorizontalAlignment="Stretch"
+                              ToolTip="Select the font weight (e.g., Light, Bold, Black) for the preview text." />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!--  Preview Card  -->
+        <Border Grid.Row="4"
+                Padding="18"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+            <DockPanel>
+                <StackPanel Margin="0,0,0,12" DockPanel.Dock="Top">
+                    <TextBlock Margin="0,0,0,4"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               Text="Preview content" />
+                    <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                               Opacity="0.6"
+                               Text="Input text here to view the actual effects under different typesetting parameters." />
+                </StackPanel>
+                <!-- <TextBlock FontFamily="{DynamicResource OPPOSansMediumFontFamily}">TextBlock</TextBlock> -->
+                <TextBox Name="PreviewTextBox"
+                         AcceptsReturn="True"
+                         FontSize="{Binding SelectedItem, ElementName=FontSizeComboBox, TargetNullValue=14.0}"
+                         FontStyle="{Binding SelectedItem, ElementName=FontStyleComboBox, TargetNullValue=Normal}"
+                         FontWeight="{Binding SelectedItem, ElementName=FontWeightComboBox, TargetNullValue=Normal}"
+                         Text="{Binding RelativeSource={RelativeSource Mode=Self}, Path=FontFamily, Mode=OneWay}"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto" />
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

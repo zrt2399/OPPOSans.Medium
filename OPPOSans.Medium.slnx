@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Demo/">
+    <Project Path="Demo/Demo.Avalonia/Demo.Avalonia.csproj" />
+    <Project Path="Demo/Demo.Wpf/Demo.Wpf.csproj" />
+  </Folder>
+  <Project Path="OPPOSans.Medium.Avalonia/OPPOSans.Medium.Avalonia.csproj" Id="40c8367d-d27c-49d2-9675-2c31f270bcc5" />
+  <Project Path="OPPOSans.Medium.Wpf/OPPOSans.Medium.Wpf.csproj" Id="e2c14602-b2ec-49fd-8a51-05f3e27d37dd" />
+  <Project Path="OPPOSans.Medium/OPPOSans.Medium.csproj" Id="d81c07cd-e584-47d7-b53c-553bdcc589be" />
+</Solution>

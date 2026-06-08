@@ -1,0 +1,113 @@
+<Window x:Class="Demo.Avalonia.Views.MainWindow"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Demo.Avalonia.ViewModels"
+        Title="Demo.Avalonia"
+        Width="800"
+        Height="450"
+        x:DataType="vm:MainWindowViewModel"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d">
+
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="DemoOuterCardBackgroundBrush">#FAFFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoControlCardBackgroundBrush">#FFF5F7FB</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoPreviewCardBackgroundBrush">#FFFFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoPreviewCardBorderBrush">#14000000</SolidColorBrush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="DemoOuterCardBackgroundBrush">#CC1C1D22</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoControlCardBackgroundBrush">#FF25272D</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoPreviewCardBackgroundBrush">#FF202228</SolidColorBrush>
+                    <SolidColorBrush x:Key="DemoPreviewCardBorderBrush">#33FFFFFF</SolidColorBrush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Margin="24" Background="{DynamicResource DemoOuterCardBackgroundBrush}">
+        <Grid RowDefinitions="Auto,20,Auto,20,*">
+            <StackPanel Spacing="6">
+                <TextBlock FontSize="24"
+                           FontWeight="SemiBold"
+                           Text="Typography Playground" />
+                <TextBlock FontSize="14"
+                           Opacity="0.65"
+                           Text="Adjust font size, font style, and font weight to preview the rendering effect of OPPOSans in real time." />
+            </StackPanel>
+
+            <Border Grid.Row="2"
+                    Padding="18"
+                    Background="{DynamicResource DemoControlCardBackgroundBrush}"
+                    CornerRadius="10">
+                <Grid ColumnDefinitions="*,16,*,16,*">
+                    <StackPanel Spacing="8">
+                        <TextBlock FontWeight="SemiBold"
+                                   Opacity="0.7"
+                                   Text="FontSize" />
+                        <ComboBox Name="FontSizeComboBox"
+                                  HorizontalAlignment="Stretch"
+                                  SelectedItem="{Binding #TextBox.FontSize}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Spacing="8">
+                        <TextBlock FontWeight="SemiBold"
+                                   Opacity="0.7"
+                                   Text="FontStyle" />
+                        <ComboBox HorizontalAlignment="Stretch"
+                                  ItemsSource="{EnumBindingSource FontStyle}"
+                                  SelectedItem="{Binding #TextBox.FontStyle}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="4" Spacing="8">
+                        <TextBlock FontWeight="SemiBold"
+                                   Opacity="0.7"
+                                   Text="FontWeight" />
+                        <ComboBox HorizontalAlignment="Stretch"
+                                  ItemsSource="{EnumBindingSource FontWeight}"
+                                  SelectedItem="{Binding #TextBox.FontWeight}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="4"
+                    Padding="18"
+                    Background="{DynamicResource DemoPreviewCardBackgroundBrush}"
+                    BorderBrush="{DynamicResource DemoPreviewCardBorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                <DockPanel VerticalSpacing="12">
+                    <StackPanel DockPanel.Dock="Top">
+                        <TextBlock Margin="0,0,0,4"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Text="Preview content" />
+                        <TextBlock FontSize="14"
+                                   Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                   Opacity="0.6"
+                                   Text="Input text here to view the actual effects under different typesetting parameters." />
+                    </StackPanel>
+                    <!-- <TextBlock FontFamily="{x:Static OPPOSansExtension.MediumFont}">TextBlock</TextBlock> -->
+                    <TextBox Name="TextBox"
+                             AcceptsReturn="True"
+                             FontSize="14"
+                             Text="{Binding RelativeSource={RelativeSource Mode=Self}, Path=FontFamily, Mode=OneWay}"
+                             TextWrapping="Wrap" />
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
