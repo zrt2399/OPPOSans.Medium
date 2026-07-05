@@ -57,7 +57,7 @@ namespace OPPOSans.Medium.Wpf
         /// <summary>
         /// Applies the OPPOSans Medium font globally to common UI controls by overriding dependency property metadata.
         /// </summary>
-        public static void ApplyGlobalOPPOSansMediumFont()
+        public static void ApplyGlobalMediumFont()
         {
             Control.FontFamilyProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata(MediumFont));
             Control.FontFamilyProperty.OverrideMetadata(typeof(ToolTip), new FrameworkPropertyMetadata(MediumFont));

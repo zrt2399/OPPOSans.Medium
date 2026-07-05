@@ -10,7 +10,7 @@ namespace Demo.Wpf
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            OPPOSansExtension.ApplyGlobalOPPOSansMediumFont();
+            OPPOSansExtension.ApplyGlobalMediumFont();
             base.OnStartup(e);
         }
     }
