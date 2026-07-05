@@ -52,7 +52,7 @@ Update your `App.xaml.cs`:
 protected override void OnStartup(StartupEventArgs e)
 {
     // Apply the font globally to common UI controls
-    OPPOSansExtension.ApplyGlobalOPPOSansMediumFont();
+    OPPOSansExtension.ApplyGlobalMediumFont();
     base.OnStartup(e);
 }
 ```
