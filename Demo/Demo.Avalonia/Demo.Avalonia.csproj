@@ -7,8 +7,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
 		<ApplicationIcon>Assets/avalonia-logo.ico</ApplicationIcon>
-		<PublishAot>true</PublishAot>
-		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<AvaloniaVersion>12.1.0</AvaloniaVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,16 +15,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="12.0.4" />
-		<PackageReference Include="Avalonia.Desktop" Version="12.0.4" />
-		<!--<PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.4" />-->
-		<PackageReference Include="Avalonia.Fonts.Inter" Version="12.0.4" />
-		<PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.2">
-			<IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-			<PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
-		</PackageReference>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+		<PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-		<PackageReference Include="Synthora" Version="2.3.6" />
+		<PackageReference Include="Synthora" Version="2.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+		<!--<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />-->
+		<!--<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />-->
+		<PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3" />
 	</ItemGroup>
 
 	<ItemGroup>

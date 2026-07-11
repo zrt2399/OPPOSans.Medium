@@ -77,8 +77,16 @@
                                    Opacity="0.7"
                                    Text="FontWeight" />
                         <ComboBox HorizontalAlignment="Stretch"
-                                  ItemsSource="{EnumBindingSource FontWeight}"
-                                  SelectedItem="{Binding #TextBox.FontWeight}" />
+                                  ItemsSource="{EnumBindingSource FontWeight,
+                                                                  UseKeyValuePair=True}"
+                                  SelectedValue="{Binding #TextBox.FontWeight, Mode=TwoWay}"
+                                  SelectedValueBinding="{ReflectionBinding Value}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{ReflectionBinding Key}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
                 </Grid>
             </Border>

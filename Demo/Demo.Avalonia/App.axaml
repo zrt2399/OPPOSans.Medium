@@ -6,6 +6,6 @@
 
     <Application.Styles>
         <!--<FluentTheme />-->
-        <SynthoraTheme DensityStyle="Normal"/>
+        <SynthoraTheme ThemeDensity="Spacious"/>
     </Application.Styles>
 </Application>
