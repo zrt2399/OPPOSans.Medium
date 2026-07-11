@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using OPPOSans.Medium.Wpf;
 
 namespace Demo.Wpf

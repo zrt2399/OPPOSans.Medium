@@ -1,4 +1,4 @@
-﻿namespace Demo.Avalonia.ViewModels
+namespace Demo.Avalonia.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
