@@ -1,35 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFrameworks>net8.0-windows;net10.0-windows</TargetFrameworks>
-        <Nullable>enable</Nullable>
-        <DebugType>embedded</DebugType>
-        <UseWPF>true</UseWPF>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Title>OPPOSans Medium font for WPF</Title>
-        <Authors>Yoyo</Authors>
-        <Copyright>Copyright © $(Authors) $([System.DateTime]::Today.ToString(yyyy))</Copyright>
-        <PackageIcon>logo.png</PackageIcon>
-        <PackageTags>WPF;XAML;UI;Font</PackageTags>
-        <Description>OPPOSans Medium font for WPF applications</Description>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <RepositoryUrl>https://github.com/zrt2399/OPPOSans.Medium</RepositoryUrl>
-        <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<DebugType>embedded</DebugType>
+		<UseWPF>true</UseWPF>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Title>OPPOSans Medium font for WPF</Title>
+		<Description>OPPOSans Medium font for WPF applications</Description>
+		<Authors>Yoyo</Authors>
+		<Copyright>Copyright © $(Authors) $([System.DateTime]::Today.ToString("yyyy"))</Copyright>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageTags>WPF;XAML;UI;Font</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/zrt2399/OPPOSans.Medium</RepositoryUrl>
+		<PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
 
 
-        <Version>1.0.1.0</Version>
-        <FileVersion>$(Version)</FileVersion>
-        <AssemblyVersion>$(Version)</AssemblyVersion>
-    </PropertyGroup>
+		<Version>1.0.4.0</Version>
+		<FileVersion>$(Version)</FileVersion>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <Resource Include="..\OPPOSans.Medium\Assets\**" Link="Assets\%(RecursiveDir)%(Filename)%(Extension)" />
-        <None Include="logo.png" Pack="true" PackagePath="\" />
-        <None Include="..\README.md" Pack="true" PackagePath="\" />
-    </ItemGroup>
+	<ItemGroup>
+		<Resource Include="..\OPPOSans.Medium\Assets\**" Link="Assets\%(RecursiveDir)%(Filename)%(Extension)" />
+		<None Include="logo.png" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
 </Project>

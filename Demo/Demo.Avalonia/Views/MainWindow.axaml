@@ -51,7 +51,9 @@
 
             <Border Grid.Row="2"
                     Padding="18"
-                    Background="{DynamicResource DemoControlCardBackgroundBrush}"
+                    Background="{DynamicResource DemoPreviewCardBackgroundBrush}"
+                    BorderBrush="{DynamicResource DemoPreviewCardBorderBrush}"
+                    BorderThickness="1"
                     CornerRadius="10">
                 <Grid ColumnDefinitions="*,16,*,16,*">
                     <StackPanel Spacing="8">
@@ -104,7 +106,6 @@
                                    FontWeight="SemiBold"
                                    Text="Preview content" />
                         <TextBlock FontSize="14"
-                                   Foreground="{DynamicResource TextFillColorSecondaryBrush}"
                                    Opacity="0.6"
                                    Text="Input text here to view the actual effects under different typesetting parameters." />
                     </StackPanel>

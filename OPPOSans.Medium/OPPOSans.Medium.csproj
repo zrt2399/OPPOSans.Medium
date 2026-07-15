@@ -6,9 +6,9 @@
 		<DebugType>embedded</DebugType>
 
 		<Title>OPPOSans Medium font</Title>
+		<Description>OPPOSans Medium font for .NET applications</Description>
 		<Authors>Yoyo</Authors>
-		<Copyright>Copyright © $(Authors) $([System.DateTime]::Today.ToString(yyyy))</Copyright>
-		<Description>OPPOSans Medium font for Avalonia applications</Description>
+		<Copyright>Copyright © $(Authors) $([System.DateTime]::Today.ToString("yyyy"))</Copyright>
 
 
 		<Version>1.0.0.0</Version>

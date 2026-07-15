@@ -28,7 +28,7 @@ namespace OPPOSans.Medium.Wpf
                 var assemblyName = typeof(OPPOSansExtension).Assembly.GetName().Name;
 
                 // 注意基础 Uri 必须以斜杠结尾，指向包含字体的文件夹
-                Uri baseUri = new Uri($"pack://application:,,,/{assemblyName};component/Assets/Fonts/");
+                var baseUri = new Uri($"pack://application:,,,/{assemblyName};component/Assets/Fonts/");
 
                 // 相对路径必须用 "./" 开头，不要带文件名，直接搜文件夹里的元数据即可
                 MediumFont = new FontFamily(baseUri, "./#OPPOSans M");
